@@ -5,7 +5,12 @@ const bobby = (req, res)=>{
 const robert = (req, res)=>{
     res.send("My name is robert");
 }
+
+const queen = (req, res)=>{
+    res.send("Queen is beautiful");
+}
 module.exports = {
     bobby,
-    robert
+    robert,
+    queen
 };
