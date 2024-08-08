@@ -4,7 +4,7 @@ const xpress = require('express');
 // The xpress() function is called... this returns an instance of an express application and is stored in the app variable
 const app = xpress();
 
-app.use('/', require("./routes"))
+app.use('/', require("./routes"));
 
 const port = 3000;
  
