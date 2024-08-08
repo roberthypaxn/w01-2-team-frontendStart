@@ -7,7 +7,7 @@ const robert = (req, res)=>{
 }
 
 const queen = (req, res)=>{
-    res.send("Queen is beautiful");
+    res.send("I love my dog");
 }
 module.exports = {
     bobby,

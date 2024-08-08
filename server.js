@@ -1,7 +1,8 @@
-//express web server
-const express = require('express');
+//The express web server is stored as a function/method inside the xpress variable
+const xpress = require('express');
 
-const app = express();
+// The xpress() function is called... this returns an instance of an express application and is stored in the app variable
+const app = xpress();
 
 app.use('/', require("./routes"))
 
