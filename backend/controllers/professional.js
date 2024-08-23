@@ -9,7 +9,7 @@ const data = {
   firstName: 'Robert',
   primaryDescription: ' is a student at BYU-Idaho through BYU pathway-connect',
   workDescription1:
-    'He loves his friends, his family, programming, and his dog Tupac.',
+    'He loves his friends, his family, programming, and his dogs Bobby and Jimmy.',
   workDescription2:
     "He's a marathon runner and can run miles and miles.",
   linkTitleText: 'Check out his work below',
