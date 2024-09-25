@@ -14,4 +14,8 @@ app.use((req, res, next) => {
 
 app.use('/professional', professionalRoutes);
 
-app.listen(8080);
+const port = 8080;
+
+app.listen(process.env.PORT || port, () => {
+  console.log('Web Server is listening at port ' + (process.env.PORT || port));
+});
