@@ -1,21 +1,28 @@
+//The express web server is stored as a function/method inside the xpress variable
 const xpress = require('express');
+
 const bodyParser = require('body-parser');
 
-const professionalRoutes = require('./routes/professional');
+//The mongodb connection from our /db/connect.js file with all its exported utilities
+const mongodb = require('./db/connect');
 
+const cors = require('cors');
+
+const port = process.env.PORT || 8080;
+
+// The xpress() function is called... this returns an instance of an express application and is stored in the app variable
 const app = xpress();
 
-app.use(bodyParser.json());
-
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  next();
-});
-
-app.use('/professional', professionalRoutes);
-
-const port = 8080;
-
-app.listen(process.env.PORT || port, () => {
-  console.log('Web Server is listening at port ' + (process.env.PORT || port));
+app
+  .use(bodyParser.json())
+  .use(cors())
+  .use('/professional', require("./routes/professional"));
+ 
+mongodb.initDb((err, mongodb) => {
+  if (err) {
+    console.log(err);
+  } else {
+    app.listen(port);
+    console.log(`Connected to DB and listening on ${port}`);
+  }
 });
