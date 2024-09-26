@@ -16,8 +16,8 @@ const app = xpress();
 app
   .use(bodyParser.json())
   .use(cors())
-  .use('/professional', require("./routes/professional"));
- 
+  .use('/', require('./routes/contacts'));
+
 mongodb.initDb((err, mongodb) => {
   if (err) {
     console.log(err);
